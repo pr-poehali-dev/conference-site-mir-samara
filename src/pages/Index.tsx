@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
+import UMLDiagram from '@/components/UMLDiagram';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -22,7 +23,7 @@ const Index = () => {
               Институт МИР
             </div>
             <div className="hidden md:flex gap-6">
-              {['home', 'about', 'program', 'speakers', 'register', 'contacts'].map((section) => (
+              {['home', 'about', 'program', 'speakers', 'register', 'uml', 'contacts'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -35,6 +36,7 @@ const Index = () => {
                   {section === 'program' && 'Программа'}
                   {section === 'speakers' && 'Спикеры'}
                   {section === 'register' && 'Регистрация'}
+                  {section === 'uml' && 'UML'}
                   {section === 'contacts' && 'Контакты'}
                 </button>
               ))}
@@ -209,6 +211,12 @@ const Index = () => {
               </form>
             </CardContent>
           </Card>
+        </div>
+      </section>
+
+      <section id="uml" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <UMLDiagram />
         </div>
       </section>
 
