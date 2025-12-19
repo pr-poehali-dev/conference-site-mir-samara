@@ -71,34 +71,43 @@ const UMLDiagram = () => {
 
         {/* Стрелки от посетителя */}
         <line x1="150" y1="80" x2="430" y2="360" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="200" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Просмотр программы</text>
+        <rect x="220" y="185" width="150" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="295" y="200" textAnchor="middle" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Просмотр программы</text>
         
         <line x1="150" y1="100" x2="420" y2="400" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="260" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Регистрация</text>
+        <rect x="220" y="245" width="90" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="265" y="260" textAnchor="middle" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Регистрация</text>
 
         {/* Стрелки от организатора */}
         <line x1="150" y1="360" x2="440" y2="380" stroke="hsl(var(--secondary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="355" fill="hsl(var(--secondary))" fontSize="12" fontWeight="500">Создание мероприятия</text>
+        <rect x="200" y="340" width="160" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="280" y="355" textAnchor="middle" fill="hsl(var(--secondary))" fontSize="12" fontWeight="500">Создание мероприятия</text>
         
         <line x1="150" y1="380" x2="440" y2="420" stroke="hsl(var(--secondary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="415" fill="hsl(var(--secondary))" fontSize="12" fontWeight="500">Управление программой</text>
+        <rect x="200" y="400" width="160" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="280" y="415" textAnchor="middle" fill="hsl(var(--secondary))" fontSize="12" fontWeight="500">Управление программой</text>
         
         <line x1="150" y1="400" x2="440" y2="460" stroke="hsl(var(--secondary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="445" fill="hsl(var(--secondary))" fontSize="12" fontWeight="500">Модерация участников</text>
+        <rect x="200" y="430" width="160" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="280" y="445" textAnchor="middle" fill="hsl(var(--secondary))" fontSize="12" fontWeight="500">Модерация участников</text>
 
         {/* Стрелки от спикера */}
         <line x1="150" y1="640" x2="430" y2="470" stroke="hsl(var(--accent))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="570" fill="hsl(var(--accent))" fontSize="12" fontWeight="500">Подача заявки</text>
+        <rect x="220" y="555" width="105" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="272" y="570" textAnchor="middle" fill="hsl(var(--accent))" fontSize="12" fontWeight="500">Подача заявки</text>
         
         <line x1="150" y1="660" x2="420" y2="490" stroke="hsl(var(--accent))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="250" y="600" fill="hsl(var(--accent))" fontSize="12" fontWeight="500">Загрузка материалов</text>
+        <rect x="200" y="585" width="145" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="272" y="600" textAnchor="middle" fill="hsl(var(--accent))" fontSize="12" fontWeight="500">Загрузка материалов</text>
 
         {/* Стрелки к базе данных */}
         <line x1="750" y1="390" x2="890" y2="405" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="800" y="380" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Сохранение данных</text>
+        <rect x="765" y="365" width="135" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="832" y="380" textAnchor="middle" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Сохранение данных</text>
         
         <line x1="900" y1="425" x2="760" y2="440" stroke="hsl(var(--primary))" strokeWidth="2" markerEnd="url(#arrowhead)"/>
-        <text x="800" y="450" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Получение данных</text>
+        <rect x="762" y="435" width="135" height="22" fill="hsl(var(--background))" rx="4"/>
+        <text x="830" y="450" textAnchor="middle" fill="hsl(var(--primary))" fontSize="12" fontWeight="500">Получение данных</text>
 
         {/* Границы системы */}
         <rect x="20" y="20" width="1160" height="750" rx="15" fill="none" stroke="hsl(var(--border))" strokeWidth="2" strokeDasharray="10,5"/>
