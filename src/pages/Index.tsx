@@ -153,7 +153,7 @@ const Index = () => {
                 name: 'Мария Иванова',
                 role: 'Руководитель отдела',
                 company: 'Институт МИР',
-                image: 'https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/0638dd6d-eaa9-4524-9899-521fe69d335f.jpg'
+                image: 'https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/6324bcbd-6bb9-4b20-89d2-0aaf4bbd6038.jpg'
               }
             ].map((speaker, i) => (
               <Card key={i} className="overflow-hidden border-2 hover:border-accent transition-all duration-300 hover:scale-105 group">
