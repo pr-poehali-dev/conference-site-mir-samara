@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
 import UMLDiagram from '@/components/UMLDiagram';
+import DatabaseSchema from '@/components/DatabaseSchema';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -23,7 +24,7 @@ const Index = () => {
               Институт МИР
             </div>
             <div className="hidden md:flex gap-6">
-              {['home', 'about', 'program', 'speakers', 'register', 'uml', 'contacts'].map((section) => (
+              {['home', 'about', 'program', 'speakers', 'register', 'uml', 'database', 'contacts'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -37,6 +38,7 @@ const Index = () => {
                   {section === 'speakers' && 'Спикеры'}
                   {section === 'register' && 'Регистрация'}
                   {section === 'uml' && 'UML'}
+                  {section === 'database' && 'База данных'}
                   {section === 'contacts' && 'Контакты'}
                 </button>
               ))}
@@ -220,7 +222,13 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4">
+      <section id="database" className="py-20 px-4">
+        <div className="container mx-auto">
+          <DatabaseSchema />
+        </div>
+      </section>
+
+      <section id="contacts" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-center mb-12 bg-gradient-to-r from-secondary to-primary bg-clip-text text-transparent">
             Контакты
