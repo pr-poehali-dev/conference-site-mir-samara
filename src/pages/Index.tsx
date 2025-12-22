@@ -6,6 +6,9 @@ import { Label } from '@/components/ui/label';
 import Icon from '@/components/ui/icon';
 import UMLDiagram from '@/components/UMLDiagram';
 import DatabaseSchema from '@/components/DatabaseSchema';
+import SpeakerProfile from '@/components/SpeakerProfile';
+import SessionStats from '@/components/SessionStats';
+import MaterialsArchive from '@/components/MaterialsArchive';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -24,7 +27,7 @@ const Index = () => {
               Институт МИР
             </div>
             <div className="hidden md:flex gap-6">
-              {['home', 'about', 'program', 'speakers', 'register', 'uml', 'database', 'contacts'].map((section) => (
+              {['home', 'about', 'program', 'speakers', 'stats', 'archive', 'uml', 'database', 'contacts'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -36,7 +39,8 @@ const Index = () => {
                   {section === 'about' && 'О конференции'}
                   {section === 'program' && 'Программа'}
                   {section === 'speakers' && 'Спикеры'}
-                  {section === 'register' && 'Регистрация'}
+                  {section === 'stats' && 'Статистика'}
+                  {section === 'archive' && 'Архив'}
                   {section === 'uml' && 'UML'}
                   {section === 'database' && 'База данных'}
                   {section === 'contacts' && 'Контакты'}
@@ -137,45 +141,60 @@ const Index = () => {
       <section id="speakers" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="font-heading font-bold text-4xl md:text-5xl text-center mb-12 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-            Спикеры
+            Спикеры конференции
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              {
-                name: 'Анна Петрова',
-                role: 'Директор по инновациям',
-                company: 'ТехОбразование',
-                image: 'https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/0b08b7a2-acd4-4d53-9ffc-1222c3c6eb8e.jpg'
-              },
-              {
-                name: 'Дмитрий Соколов',
-                role: 'CEO',
-                company: 'ЦифроваяШкола',
-                image: 'https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/6c8ad11d-0a93-4075-b536-a9a7cf472e3a.jpg'
-              },
-              {
-                name: 'Мария Иванова',
-                role: 'Руководитель отдела',
-                company: 'Институт МИР',
-                image: 'https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/6324bcbd-6bb9-4b20-89d2-0aaf4bbd6038.jpg'
-              }
-            ].map((speaker, i) => (
-              <Card key={i} className="overflow-hidden border-2 hover:border-accent transition-all duration-300 hover:scale-105 group">
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={speaker.image}
-                    alt={speaker.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="font-heading">{speaker.name}</CardTitle>
-                  <CardDescription className="text-primary">{speaker.role}</CardDescription>
-                  <p className="text-sm text-muted-foreground">{speaker.company}</p>
-                </CardHeader>
-              </Card>
-            ))}
+          <div className="space-y-8">
+            <SpeakerProfile
+              name="Анна Петрова"
+              role="Директор по инновациям"
+              company="ТехОбразование"
+              image="https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/0b08b7a2-acd4-4d53-9ffc-1222c3c6eb8e.jpg"
+              bio="Эксперт в области образовательных технологий с 15-летним опытом. Анна возглавляет отдел инноваций в ТехОбразование, где внедряет передовые решения на базе ИИ. Имеет степень PhD в области компьютерных наук и более 50 публикаций по теме цифровизации образования."
+              materials={[
+                { type: 'presentation', title: 'Искусственный интеллект в образовании', url: '#' },
+                { type: 'video', title: 'Запись выступления: Будущее EdTech', url: '#' },
+                { type: 'article', title: 'Статья: ИИ-ассистенты для преподавателей', url: '#' }
+              ]}
+            />
+            
+            <SpeakerProfile
+              name="Дмитрий Соколов"
+              role="CEO"
+              company="ЦифроваяШкола"
+              image="https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/6c8ad11d-0a93-4075-b536-a9a7cf472e3a.jpg"
+              bio="Предприниматель и визионер в сфере онлайн-образования. Основатель платформы ЦифроваяШкола, которая объединяет более 500 000 учащихся по всему миру. Дмитрий разработал уникальную методику геймификации обучения, которая повышает вовлеченность студентов на 340%."
+              materials={[
+                { type: 'presentation', title: 'Геймификация учебного процесса', url: '#' },
+                { type: 'video', title: 'Мастер-класс: Создание интерактивных курсов', url: '#' },
+                { type: 'article', title: 'Кейс: Трансформация традиционной школы', url: '#' }
+              ]}
+            />
+            
+            <SpeakerProfile
+              name="Мария Иванова"
+              role="Руководитель отдела инклюзивного образования"
+              company="Институт МИР"
+              image="https://cdn.poehali.dev/projects/220fbc87-b838-4ac6-a8d4-72062a9534ef/files/6324bcbd-6bb9-4b20-89d2-0aaf4bbd6038.jpg"
+              bio="Признанный эксперт в области инклюзивного образования и адаптивных технологий. Мария руководит проектами по созданию доступной образовательной среды для людей с особыми потребностями. Автор 7 книг и лауреат премии ЮНЕСКО за вклад в развитие инклюзивного образования."
+              materials={[
+                { type: 'presentation', title: 'Инклюзивные технологии в современной школе', url: '#' },
+                { type: 'video', title: 'Вебинар: Адаптивные платформы обучения', url: '#' },
+                { type: 'article', title: 'Методические рекомендации по инклюзии', url: '#' }
+              ]}
+            />
           </div>
+        </div>
+      </section>
+
+      <section id="stats" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <SessionStats />
+        </div>
+      </section>
+
+      <section id="archive" className="py-20 px-4">
+        <div className="container mx-auto">
+          <MaterialsArchive />
         </div>
       </section>
 
